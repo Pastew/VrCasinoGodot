@@ -51,7 +51,7 @@ button = NodePath("../Gfx/Inner")
 displacement = Vector3(0, -0.007, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayButton/InteractableAreaButton"]
-transform = Transform3D(1, 0, 0, 0, 1, 5.96046e-08, 0, -5.96046e-08, 1, 0, -0.0103666, -0.00351298)
+transform = Transform3D(1, 0, 0, 0, 1, 5.96046e-08, 0, -5.96046e-08, 1, 0, 0, 0)
 shape = SubResource("CylinderShape3D_leyxy")
 
 [node name="AreaAudio" type="AudioStreamPlayer3D" parent="PlayButton/InteractableAreaButton"]
