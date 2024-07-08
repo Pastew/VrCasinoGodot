@@ -1,25 +1,24 @@
 extends Node3D
 
-const WEB_BROWSER = "./WebBrowser"
 
 var xr_interface: XRInterface
 var web_browser: Node3D
 var current_url = ""
 
 func _ready():
-	xr_interface = XRServer.find_interface("OpenXR")
-	if xr_interface and xr_interface.is_initialized():
-		print("OpenXR initialized successfully")
-
-		# Turn off v-sync!
-		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
-
-		# Change our main viewport to output to the HMD
-		get_viewport().use_xr = true
-	else:
-		print("OpenXR not initialized, please check if your headset is connected")
+	#xr_interface = XRServer.find_interface("OpenXR")
+	#if xr_interface and xr_interface.is_initialized():
+		#print("OpenXR initialized successfully")
+#
+		## Turn off v-sync!
+		#DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
+#
+		## Change our main viewport to output to the HMD
+		#get_viewport().use_xr = true
+	#else:
+		#print("OpenXR not initialized, please check if your headset is connected")
 		
-	web_browser = get_node(WEB_BROWSER)
+	web_browser = get_node("%WebBrowser")
 	print(web_browser)
 		
 func spin_button_pressed(url, anchor_node):

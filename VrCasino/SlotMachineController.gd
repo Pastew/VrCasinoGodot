@@ -8,22 +8,25 @@ extends Node3D
 @export var debug_button: bool = false : set = debug
 		
 func debug(new_value: bool) -> void:
-	button_pressed()
+	pass
+	#_on_play_button_pressed()
 	
 @export var url: String
 
 const WEB_BROWSER_ANCHOR = "./WebBrowserAnchor"
-const VR_CASINO = "/root/StartZone/VrCasino"
+
+
+@onready var play_button := $PlayButton/InteractableAreaButton
 
 func _ready():
-	pass
+	play_button.button_pressed.connect(_on_play_button_pressed)
 
 func _process(delta):
 	pass
 
-func button_pressed():
+func _on_play_button_pressed(_button) -> void:
 	var anchor_node = get_node(WEB_BROWSER_ANCHOR)
-	get_node(VR_CASINO).spin_button_pressed(url, anchor_node)
+	get_node("%GameManager").spin_button_pressed(url, anchor_node)
 
-func button_released():
+func _on_button_released():
 	pass
