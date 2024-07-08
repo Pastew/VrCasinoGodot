@@ -1,0 +1,12 @@
+# Blender 4.0.2 MTL File: 'SlotMachine.blend'
+# www.blender.org
+
+newmtl Sci-Fi_White_Orange_mat_2_2_1.000
+Ns 360.000000
+Ka 0.400000 0.400000 0.400000
+Kd 0.019554 0.020397 0.017992
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3

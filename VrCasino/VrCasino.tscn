@@ -1,0 +1,103 @@
+[gd_scene load_steps=9 format=3 uid="uid://ce6hs15tndixh"]
+
+[ext_resource type="Script" path="res://VrCasino/VrCasino.gd" id="1_cj7g3"]
+[ext_resource type="Script" path="res://VrCasino/XRCharacterController.gd" id="2_6t0h3"]
+[ext_resource type="PackedScene" uid="uid://dvl383ispakmn" path="res://WebBrowser/WebBrowser.tscn" id="2_q61m3"]
+[ext_resource type="Script" path="res://VrCasino/HandController.gd" id="3_d2dgl"]
+[ext_resource type="PackedScene" uid="uid://pahkwgbbkm1g" path="res://VrCasino/Models/Hand/HandScene.tscn" id="3_jv048"]
+[ext_resource type="PackedScene" uid="uid://bnednt5es4ror" path="res://VrCasino/SlotMachineController.tscn" id="5_dempq"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_n0422"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ikd2b"]
+
+[node name="VrCasino" type="Node3D"]
+script = ExtResource("1_cj7g3")
+
+[node name="WebBrowser" parent="." instance=ExtResource("2_q61m3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.731847, 2.53015, -1.78709)
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+transform = Transform3D(0.800648, 0, -0.599135, 0, 1, 0, 0.599135, 0, 0.800648, 0, 0, 0)
+script = ExtResource("2_6t0h3")
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+
+[node name="LeftController" type="XRController3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.392796, 0, 0)
+tracker = &"left_hand"
+
+[node name="Sketchfab_Scene" parent="XROrigin3D/LeftController" instance=ExtResource("3_jv048")]
+transform = Transform3D(0.00865351, -7.56514e-10, -7.56514e-10, 7.56514e-10, 0.00865351, -6.61366e-17, -7.56514e-10, 0, -0.00865351, 0, -0.0261221, 0.139013)
+
+[node name="RightController" type="XRController3D" parent="XROrigin3D"]
+tracker = &"right_hand"
+script = ExtResource("3_d2dgl")
+
+[node name="HandGfx" parent="XROrigin3D/RightController" instance=ExtResource("3_jv048")]
+transform = Transform3D(-0.00856154, 0, -7.48474e-10, 0, 0.00856154, 0, 7.48474e-10, 0, -0.00856154, 0.00100559, -0.0275987, 0.13822)
+
+[node name="Area3DPointFinger" type="Area3D" parent="XROrigin3D/RightController"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0155004, 0.00492322, -0.0124355)
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/RightController/Area3DPointFinger"]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0.00331892, 0, 0.00977653)
+shape = SubResource("SphereShape3D_n0422")
+
+[node name="Room" type="Node3D" parent="."]
+
+[node name="Wall" type="MeshInstance3D" parent="Room"]
+transform = Transform3D(5.488, 0, 0, 0, -1.74846e-07, -4.4, 0, 4, -1.9233e-07, 0, 0, -3)
+mesh = SubResource("PlaneMesh_ikd2b")
+
+[node name="Wall2" type="MeshInstance3D" parent="Room"]
+transform = Transform3D(-2.39888e-07, 4, -1.9233e-07, 0, -1.74846e-07, -4.4, -5.488, -1.74846e-07, 8.40702e-15, -3, 0, 0)
+mesh = SubResource("PlaneMesh_ikd2b")
+
+[node name="Wall3" type="MeshInstance3D" parent="Room"]
+transform = Transform3D(-5.488, -6.03983e-07, 2.9041e-14, 0, -1.74846e-07, -4.4, 8.28665e-07, -4, 1.9233e-07, 0, 0, 3)
+mesh = SubResource("PlaneMesh_ikd2b")
+
+[node name="Wall4" type="MeshInstance3D" parent="Room"]
+transform = Transform3D(4.14332e-07, -4, 1.9233e-07, 0, -1.74846e-07, -4.4, 5.488, 3.01992e-07, -1.45205e-14, 5, 0, 0)
+mesh = SubResource("PlaneMesh_ikd2b")
+
+[node name="Floor" type="MeshInstance3D" parent="Room"]
+transform = Transform3D(14, 0, 0, 0, 4, 0, 0, 0, 14, 0, 0, 0)
+mesh = SubResource("PlaneMesh_ikd2b")
+
+[node name="Ceiling" type="MeshInstance3D" parent="Room"]
+transform = Transform3D(14, -6.78226e-05, 2.32261e-05, -0.000237379, -4, 5.18489e-05, 2.32261e-05, -1.4814e-05, -14, 0, 3.5, 0)
+mesh = SubResource("PlaneMesh_ikd2b")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.680401, -0.617803, 0.394175, 0, 0.537874, 0.843026, -0.73284, -0.573596, 0.36597, 3.32507, 4.10531, 2.62115)
+visible = false
+
+[node name="Lights" type="Node" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.294478, 2.58332, 1.2333)
+light_color = Color(0.996273, 1, 0.796486, 1)
+light_energy = 1.8
+shadow_enabled = true
+omni_range = 12.36
+
+[node name="SlotMachine" parent="." instance=ExtResource("5_dempq")]
+url = "https://sklep.hard-pc.pl"
+
+[node name="SlotMachine2" parent="." instance=ExtResource("5_dempq")]
+transform = Transform3D(0.985523, 0, -0.169538, 0, 1, 0, 0.169538, 0, 0.985523, 1.78374, -2.38419e-07, -0.983197)
+url = "https://staticdemo.yggdrasilgaming.com/init/launchClient.html?gameid=10122&lang=en&currency=EUR&org=Demo&key=&fullscreen=yes"
+
+[node name="SlotMachine3" parent="." instance=ExtResource("5_dempq")]
+transform = Transform3D(0.635512, 0, -0.77209, 0, 1, 0, 0.77209, 0, 0.635512, 3.41686, -2.38419e-07, -0.408483)
+url = "https://staticdemo.yggdrasilgaming.com/init/launchClient.html?gameid=10148&lang=en&currency=EUR&org=Demo&key=&fullscreen=yes"
+
+[node name="SlotMachine4" parent="." instance=ExtResource("5_dempq")]
+transform = Transform3D(-0.0457114, 0, -0.998954, 0, 1, 0, 0.998954, 0, -0.0457114, 4.18069, -2.38419e-07, 1.40034)
+url = "https://staticdemo.yggdrasilgaming.com/init/launchClient.html?gameid=10094&lang=en&currency=EUR&org=Demo&key=&fullscreen=yes"
+
+[connection signal="area_entered" from="XROrigin3D/RightController/Area3DPointFinger" to="XROrigin3D/RightController" method="_on_area_3d_point_finger_area_entered"]
+[connection signal="area_exited" from="XROrigin3D/RightController/Area3DPointFinger" to="XROrigin3D/RightController" method="_on_area_3d_point_finger_area_exited"]

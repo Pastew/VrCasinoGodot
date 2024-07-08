@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://nlbwf6r0gq63"]
+
+[ext_resource type="Texture2D" uid="uid://bcfsv60xrlxmy" path="res://VrCasino/Models/Hand/textures/skin_baseColor.jpeg" id="1_ifjhl"]
+[ext_resource type="Texture2D" uid="uid://comodwmq5yac2" path="res://VrCasino/Models/Hand/textures/skin_normal.png" id="2_6enrc"]
+
+[resource]
+resource_name = "skin"
+cull_mode = 2
+albedo_texture = ExtResource("1_ifjhl")
+normal_enabled = true
+normal_texture = ExtResource("2_6enrc")
+disable_receive_shadows = true

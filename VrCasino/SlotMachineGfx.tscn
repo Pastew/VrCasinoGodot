@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsvjvf1hc1mjg"]
+
+[ext_resource type="PackedScene" path="res://VrCasino/Models/SlotMachine.glb" id="1_15b37"]
+
+[node name="SlotMachine" instance=ExtResource("1_15b37")]
+
+[node name="Button" parent="SloydObject" index="1"]
+visible = false
+
+[node name="Button_002" parent="SloydObject" index="2"]
+visible = false
+
+[node name="Button_004" parent="SloydObject" index="3"]
+visible = false
+
+[node name="Button_006" parent="SloydObject" index="4"]
+visible = false
+
+[node name="Button_007" parent="SloydObject/Button_006" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+
+[node name="Button_008" parent="SloydObject" index="5"]
+visible = false
+
+[node name="SlotHandle" parent="SloydObject" index="9"]
+visible = false

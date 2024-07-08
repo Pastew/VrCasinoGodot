@@ -1,0 +1,85 @@
+[gd_scene load_steps=17 format=3 uid="uid://bnednt5es4ror"]
+
+[ext_resource type="PackedScene" uid="uid://bsvjvf1hc1mjg" path="res://VrCasino/SlotMachineGfx.tscn" id="1_5vy0g"]
+[ext_resource type="Script" path="res://VrCasino/SlotMachineController.gd" id="1_rxno8"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/interactables/interactable_area_button.gd" id="3_fnkmd"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/audio/area_audio.gd" id="4_kps26"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/audio/area_audio_type.gd" id="5_vwi3m"]
+[ext_resource type="AudioStream" uid="uid://wbmqrgvnmvxm" path="res://assets/freesound/63529__florian_reinke__button_on.wav" id="6_absw0"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/hand_pose_area.gd" id="7_kwwi5"]
+[ext_resource type="ArrayMesh" uid="uid://beptyugykin6g" path="res://VrCasino/Models/Button/ButtonOuter.obj" id="8_4gnvy"]
+[ext_resource type="Resource" uid="uid://ciw0f7mg4ai0k" path="res://addons/godot-xr-tools/hands/poses/pose_point_left.tres" id="8_nh1pb"]
+[ext_resource type="Material" uid="uid://dhee557ymq7eb" path="res://VrCasino/Models/Button/button_outer.tres" id="8_t2xil"]
+[ext_resource type="Resource" uid="uid://bhvrpfo4ecbub" path="res://addons/godot-xr-tools/hands/poses/pose_point_right.tres" id="9_1yfqw"]
+[ext_resource type="ArrayMesh" uid="uid://duudm1dc7ebgt" path="res://VrCasino/Models/Button/ButtonInner.obj" id="9_jw46c"]
+[ext_resource type="Material" uid="uid://bp8qqlsv5ed68" path="res://VrCasino/Models/Button/button_inner.tres" id="11_7na8l"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_leyxy"]
+height = 0.0312483
+radius = 0.0462365
+
+[sub_resource type="Resource" id="Resource_0vift"]
+script = ExtResource("5_vwi3m")
+name = "Button"
+touch_sound = ExtResource("6_absw0")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kpell"]
+radius = 0.0586477
+
+[node name="SlotMachineController" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.338426, 0, -1.16295)
+script = ExtResource("1_rxno8")
+
+[node name="GFX" type="Node3D" parent="."]
+
+[node name="SlotMachineGfx" parent="GFX" instance=ExtResource("1_5vy0g")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.000235617, -0.00118071, 0.000201225)
+
+[node name="WebBrowserAnchor" type="Node3D" parent="."]
+transform = Transform3D(0.26, 0, 0, 0, 0.25795, 0.0325867, 0, -0.0325867, 0.25795, 0, 1.21043, 0.383333)
+
+[node name="Logic" type="Node3D" parent="."]
+
+[node name="PlayButton" type="Node3D" parent="."]
+transform = Transform3D(1.47508, 0, 0, 0, 1.43167, -0.355204, 0, 0.355204, 1.43167, 0.273592, 0.891865, 0.499523)
+
+[node name="InteractableAreaButton" type="Area3D" parent="PlayButton"]
+collision_layer = 0
+collision_mask = 131072
+script = ExtResource("3_fnkmd")
+button = NodePath("../Gfx/Inner")
+displacement = Vector3(0, -0.007, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayButton/InteractableAreaButton"]
+transform = Transform3D(1, 0, 0, 0, 1, 5.96046e-08, 0, -5.96046e-08, 1, 0, -0.0103666, -0.00351298)
+shape = SubResource("CylinderShape3D_leyxy")
+
+[node name="AreaAudio" type="AudioStreamPlayer3D" parent="PlayButton/InteractableAreaButton"]
+script = ExtResource("4_kps26")
+area_audio_type = SubResource("Resource_0vift")
+
+[node name="HandPoseArea" type="Area3D" parent="PlayButton"]
+collision_layer = 2097152
+collision_mask = 0
+monitoring = false
+script = ExtResource("7_kwwi5")
+left_pose = ExtResource("8_nh1pb")
+right_pose = ExtResource("9_1yfqw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayButton/HandPoseArea"]
+shape = SubResource("SphereShape3D_kpell")
+
+[node name="Gfx" type="Node3D" parent="PlayButton"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.017827, 1.19209e-07)
+
+[node name="Outer" type="MeshInstance3D" parent="PlayButton/Gfx"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.01614e-08, 0, 2.01614e-08, 1, 0, 0, 0)
+material_override = ExtResource("8_t2xil")
+mesh = ExtResource("8_4gnvy")
+skeleton = NodePath("")
+
+[node name="Inner" type="MeshInstance3D" parent="PlayButton/Gfx"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, 0, 0, 0)
+mesh = ExtResource("9_jw46c")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("11_7na8l")
