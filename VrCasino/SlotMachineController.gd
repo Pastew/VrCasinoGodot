@@ -15,7 +15,6 @@ func debug(new_value: bool) -> void:
 
 const WEB_BROWSER_ANCHOR = "./WebBrowserAnchor"
 
-
 @onready var play_button := $PlayButton/InteractableAreaButton
 
 func _ready():
@@ -26,7 +25,9 @@ func _process(delta):
 
 func _on_play_button_pressed(_button) -> void:
 	var anchor_node = get_node(WEB_BROWSER_ANCHOR)
-	get_node("%GameManager").spin_button_pressed(url, anchor_node)
+	var game_manager = get_node("%GameManager")
+	
+	game_manager.spin_button_pressed(url, anchor_node)
 
 func _on_button_released():
 	pass

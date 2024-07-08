@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bsvjvf1hc1mjg"]
 
-[ext_resource type="PackedScene" path="res://VrCasino/Models/SlotMachine.glb" id="1_15b37"]
+[ext_resource type="PackedScene" uid="uid://bwj8ba42s56tr" path="res://VrCasino/Models/SlotMachine.glb" id="1_15b37"]
 
 [node name="SlotMachine" instance=ExtResource("1_15b37")]
 

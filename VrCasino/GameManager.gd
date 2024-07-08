@@ -6,17 +6,11 @@ var web_browser: Node3D
 var current_url = ""
 
 func _ready():
-	#xr_interface = XRServer.find_interface("OpenXR")
-	#if xr_interface and xr_interface.is_initialized():
-		#print("OpenXR initialized successfully")
-#
-		## Turn off v-sync!
-		#DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
-#
-		## Change our main viewport to output to the HMD
-		#get_viewport().use_xr = true
-	#else:
-		#print("OpenXR not initialized, please check if your headset is connected")
+	var left_controller = XRHelpers.get_left_controller(get_node("/root/Main/XROrigin3D"))
+	var right_controller = XRHelpers.get_right_controller(get_node("/root/Main/XROrigin3D"))
+	
+	left_controller.input_float_changed.connect(self._on_left_input_float_changed)
+	right_controller.input_float_changed.connect(self._on_right_input_float_changed)
 		
 	web_browser = get_node("%WebBrowser")
 	print(web_browser)
@@ -39,3 +33,21 @@ func set_web_browser_position(node):
 	web_browser.global_transform.origin = pos
 	web_browser.global_transform.basis = basis
 	web_browser.scale = scl
+
+func _on_left_input_float_changed(name, value):
+	if current_url == "":
+		return
+		
+	if value > 0.25:
+		web_browser.emulateClickOnSpinButton()
+	elif value == 0:
+		pass
+
+func _on_right_input_float_changed(name, value):
+	if current_url == "":
+		return
+		
+	if value > 0.25:
+		web_browser.emulateClickOnSpinButton()
+	elif value == 0:
+		pass
