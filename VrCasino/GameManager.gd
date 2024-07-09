@@ -18,8 +18,9 @@ func _ready():
 func spin_button_pressed(url, anchor_node):
 	if current_url != url:
 		current_url = url
-		set_web_browser_position(anchor_node)
 		web_browser.load_url(url)
+		await get_tree().create_timer(1).timeout
+		set_web_browser_position(anchor_node)
 	else:
 		web_browser.emulateClickOnSpinButton()
 		
