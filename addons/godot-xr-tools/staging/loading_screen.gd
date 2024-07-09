@@ -87,7 +87,11 @@ func _process(delta):
 			follow_speed.sample_baked(abs(angle) / PI) * delta
 	).orthonormalized()
 
-
+func _input(event):
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_T:
+			_on_HoldButton_pressed()
+			
 ## Set the camera to track
 func set_camera(p_camera : XRCamera3D) -> void:
 	_camera = p_camera
