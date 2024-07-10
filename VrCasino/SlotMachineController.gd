@@ -3,6 +3,7 @@ extends Node3D
 #const url_multifly = "https://staticdemo.yggdrasilgaming.com/init/launchClient.html?gameid=10122&lang=en&currency=EUR&org=Demo&key=&fullscreen=yes"
 #const url_vikings = "https://staticdemo.yggdrasilgaming.com/init/launchClient.html?gameid=10094&lang=en&currency=EUR&org=Demo&key=&fullscreen=yes"
 #const url_gods = "https://staticdemo.yggdrasilgaming.com/init/launchClient.html?gameid=10094&lang=en&currency=EUR&org=Demo&key=&fullscreen=yes"
+#const url_sumo = "https://demogamesfree.pragmaticplay.net/gs2c/html5Game.do?extGame=1&symbol=vswaysmegwghts&gname=Sumo%20Supreme%20Megaways&jurisdictionID=99&lobbyUrl=https%3A%2F%2Fclienthub.pragmaticplay.com%2Fslots%2Fgame-library%2F&mgckey=stylename@generic~SESSION@08982afa-5b43-4da8-a81e-01e1faa09778"
 #const url_hard_pc = "https://sklep.hard-pc.pl/"
 
 @export var debug_button: bool = false : set = debug

@@ -10,12 +10,14 @@ var is_mouse_held = false
 var last_mouse_pos3D = null
 # The last processed input touch/mouse event. To calculate relative movement.
 var last_mouse_pos2D = null
+var _currentUrl = ""
 
 @onready var node_viewport = $SubViewport
 @onready var node_quad = $Quad
 @onready var node_area = $Quad/Area3D
 
 func load_url(url):
+	_currentUrl = url
 	get_node("./SubViewport/GUI").load_url(url)
 	
 func _ready():
@@ -229,8 +231,7 @@ func send_mouse_move_to_subviewport():
 	node_viewport.push_input(mouse_event)
 
 func get_spin_button_position():
-	var x = node_viewport.size.x / 2
-	var y = node_viewport.size.y * 0.9
-	var pos = Vector2(x, y)
+
+	var pos = SpinButtonPosition.get_pos_by_url(_currentUrl)
 	
 	return pos
