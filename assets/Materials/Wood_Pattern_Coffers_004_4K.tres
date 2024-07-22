@@ -1,0 +1,22 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://rwfudpw5tn7r"]
+
+[ext_resource type="Texture2D" uid="uid://dx4le1v73wqfp" path="res://assets/Materials/Wood_Pattern_Coffers_004_4K/Wood_Pattern_Coffers_004_basecolor.png" id="1_0b471"]
+[ext_resource type="Texture2D" uid="uid://crnmars7jm4w8" path="res://assets/Materials/Wood_Pattern_Coffers_004_4K/Wood_Pattern_Coffers_004_ambientOcclusion.png" id="2_eyqck"]
+[ext_resource type="Texture2D" uid="uid://6dfmq5lowqd" path="res://assets/Materials/Wood_Pattern_Coffers_004_4K/Wood_Pattern_Coffers_004_normal.png" id="3_6gi4e"]
+[ext_resource type="Texture2D" uid="uid://g4atr2jtu61w" path="res://assets/Materials/Wood_Pattern_Coffers_004_4K/Wood_Pattern_Coffers_004_roughness.png" id="4_wtx0l"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4k7q3"]
+load_path = "res://.godot/imported/Wood_Pattern_Coffers_004_height.png-a17b5cd3c70e0d2ae61d655608a638a1.s3tc.ctex"
+
+[resource]
+albedo_texture = ExtResource("1_0b471")
+roughness_texture = ExtResource("4_wtx0l")
+normal_enabled = true
+normal_texture = ExtResource("3_6gi4e")
+ao_enabled = true
+ao_light_affect = 0.88
+ao_texture = ExtResource("2_eyqck")
+heightmap_enabled = true
+heightmap_scale = 1.169
+heightmap_texture = SubResource("CompressedTexture2D_4k7q3")
+uv1_scale = Vector3(5, 1, 1)

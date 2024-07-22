@@ -1,0 +1,20 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://xmelywdmqh7x"]
+
+[ext_resource type="Texture2D" uid="uid://da0mbb43d1eey" path="res://assets/Materials/Wood_Herringbone_Tiles_003_4K/Wood_Herringbone_Tiles_003_basecolor.png" id="1_hl8ap"]
+[ext_resource type="Texture2D" uid="uid://b3bgxcr2w4543" path="res://assets/Materials/Wood_Herringbone_Tiles_003_4K/Wood_Herringbone_Tiles_003_ambientOcclusion.png" id="2_osewi"]
+[ext_resource type="Texture2D" uid="uid://c6ncngcuyj8xn" path="res://assets/Materials/Wood_Herringbone_Tiles_003_4K/Wood_Herringbone_Tiles_003_height.png" id="3_jypor"]
+[ext_resource type="Texture2D" uid="uid://dc6x5cc5nyek5" path="res://assets/Materials/Wood_Herringbone_Tiles_003_4K/Wood_Herringbone_Tiles_003_normal.png" id="4_tiwxu"]
+[ext_resource type="Texture2D" uid="uid://d1pl3pp1eppal" path="res://assets/Materials/Wood_Herringbone_Tiles_003_4K/Wood_Herringbone_Tiles_003_roughness.png" id="5_7s8yj"]
+
+[resource]
+albedo_texture = ExtResource("1_hl8ap")
+roughness_texture = ExtResource("5_7s8yj")
+normal_enabled = true
+normal_texture = ExtResource("4_tiwxu")
+ao_enabled = true
+ao_light_affect = 1.0
+ao_texture = ExtResource("2_osewi")
+heightmap_enabled = true
+heightmap_scale = 2.0
+heightmap_texture = ExtResource("3_jypor")
+uv1_scale = Vector3(20, 20, 20)

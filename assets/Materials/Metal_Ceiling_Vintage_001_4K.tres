@@ -1,0 +1,21 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://3uup6g5tcc2p"]
+
+[ext_resource type="Texture2D" uid="uid://bx854lb7ihfua" path="res://assets/Materials/Metal_Ceiling_Vintage_001_4K/Metal_Ceiling_Vintage_001_basecolor.png" id="1_wq1p2"]
+[ext_resource type="Texture2D" uid="uid://c4b233ctfssst" path="res://assets/Materials/Metal_Ceiling_Vintage_001_4K/Metal_Ceiling_Vintage_001_ambientOcclusion.png" id="2_2fhab"]
+[ext_resource type="Texture2D" uid="uid://dgqj3oeu3abp6" path="res://assets/Materials/Metal_Ceiling_Vintage_001_4K/Metal_Ceiling_Vintage_001_normal.png" id="3_crahj"]
+[ext_resource type="Texture2D" uid="uid://8d3nou16h30f" path="res://assets/Materials/Metal_Ceiling_Vintage_001_4K/Metal_Ceiling_Vintage_001_metallic.png" id="3_ju3tn"]
+[ext_resource type="Texture2D" uid="uid://dp0vq7o1bukv2" path="res://assets/Materials/Metal_Ceiling_Vintage_001_4K/Metal_Ceiling_Vintage_001_roughness.png" id="4_uvaij"]
+
+[resource]
+albedo_texture = ExtResource("1_wq1p2")
+metallic = 0.56
+metallic_specular = 0.03
+metallic_texture = ExtResource("3_ju3tn")
+roughness_texture = ExtResource("4_uvaij")
+normal_enabled = true
+normal_scale = 2.06
+normal_texture = ExtResource("3_crahj")
+ao_enabled = true
+ao_light_affect = 0.62
+ao_texture = ExtResource("2_2fhab")
+uv1_scale = Vector3(2, 2, 2)
