@@ -1,70 +1,71 @@
-[gd_scene load_steps=23 format=3 uid="uid://b64v7w5y3yghi"]
+[gd_scene load_steps=24 format=3 uid="uid://b64v7w5y3yghi"]
 
 [ext_resource type="PackedScene" uid="uid://qbmx03iibuuu" path="res://addons/godot-xr-tools/staging/scene_base.tscn" id="1_2sv0p"]
+[ext_resource type="Material" uid="uid://xmelywdmqh7x" path="res://assets/Materials/Wood_Herringbone_Tiles_003_4K/floor_wood.tres" id="2_xl0k8"]
 [ext_resource type="Material" uid="uid://ccdofvku4c7w3" path="res://assets/prototype_materials/stone_grey.tres" id="3_uwduq"]
 [ext_resource type="PackedScene" uid="uid://bnednt5es4ror" path="res://VrCasino/SlotMachineController.tscn" id="6_osk6e"]
 [ext_resource type="PackedScene" uid="uid://dvl383ispakmn" path="res://WebBrowser/WebBrowser.tscn" id="7_7plsn"]
 [ext_resource type="Script" path="res://VrCasino/GameManager.gd" id="8_twn8o"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3lq77"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_q0sm7"]
 animation = &"Grip"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1ys52"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ltejg"]
 animation = &"Grip"
 
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_8nj8e"]
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_tklfg"]
 filter_enabled = true
 filters = ["Armature/Skeleton3D:Little_Distal_L", "Armature/Skeleton3D:Little_Intermediate_L", "Armature/Skeleton3D:Little_Metacarpal_L", "Armature/Skeleton3D:Little_Proximal_L", "Armature/Skeleton3D:Middle_Distal_L", "Armature/Skeleton3D:Middle_Intermediate_L", "Armature/Skeleton3D:Middle_Metacarpal_L", "Armature/Skeleton3D:Middle_Proximal_L", "Armature/Skeleton3D:Ring_Distal_L", "Armature/Skeleton3D:Ring_Intermediate_L", "Armature/Skeleton3D:Ring_Metacarpal_L", "Armature/Skeleton3D:Ring_Proximal_L", "Armature/Skeleton3D:Thumb_Distal_L", "Armature/Skeleton3D:Thumb_Metacarpal_L", "Armature/Skeleton3D:Thumb_Proximal_L", "Armature/Skeleton:Little_Distal_L", "Armature/Skeleton:Little_Intermediate_L", "Armature/Skeleton:Little_Proximal_L", "Armature/Skeleton:Middle_Distal_L", "Armature/Skeleton:Middle_Intermediate_L", "Armature/Skeleton:Middle_Proximal_L", "Armature/Skeleton:Ring_Distal_L", "Armature/Skeleton:Ring_Intermediate_L", "Armature/Skeleton:Ring_Proximal_L", "Armature/Skeleton:Thumb_Distal_L", "Armature/Skeleton:Thumb_Proximal_L"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lu5nj"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gt2s6"]
 animation = &"Grip 5"
 
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_pubh6"]
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_jv670"]
 filter_enabled = true
 filters = ["Armature/Skeleton3D:Index_Distal_L", "Armature/Skeleton3D:Index_Intermediate_L", "Armature/Skeleton3D:Index_Metacarpal_L", "Armature/Skeleton3D:Index_Proximal_L", "Armature/Skeleton:Index_Distal_L", "Armature/Skeleton:Index_Intermediate_L", "Armature/Skeleton:Index_Proximal_L"]
 
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_f5ea8"]
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_vptri"]
 graph_offset = Vector2(-536, 11)
-nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_3lq77")
+nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_q0sm7")
 nodes/ClosedHand1/position = Vector2(-600, 300)
-nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_1ys52")
+nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_ltejg")
 nodes/ClosedHand2/position = Vector2(-360, 300)
-nodes/Grip/node = SubResource("AnimationNodeBlend2_8nj8e")
+nodes/Grip/node = SubResource("AnimationNodeBlend2_tklfg")
 nodes/Grip/position = Vector2(0, 20)
-nodes/OpenHand/node = SubResource("AnimationNodeAnimation_lu5nj")
+nodes/OpenHand/node = SubResource("AnimationNodeAnimation_gt2s6")
 nodes/OpenHand/position = Vector2(-600, 100)
-nodes/Trigger/node = SubResource("AnimationNodeBlend2_pubh6")
+nodes/Trigger/node = SubResource("AnimationNodeBlend2_jv670")
 nodes/Trigger/position = Vector2(-360, 20)
 node_connections = [&"Grip", 0, &"Trigger", &"Grip", 1, &"ClosedHand2", &"Trigger", 0, &"OpenHand", &"Trigger", 1, &"ClosedHand1", &"output", 0, &"Grip"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5b1tu"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dmga3"]
 animation = &"Grip"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ymvdn"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_thnib"]
 animation = &"Grip"
 
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_juk84"]
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_h2753"]
 filter_enabled = true
 filters = ["Armature/Skeleton3D:Little_Distal_R", "Armature/Skeleton3D:Little_Intermediate_R", "Armature/Skeleton3D:Little_Metacarpal_R", "Armature/Skeleton3D:Little_Proximal_R", "Armature/Skeleton3D:Middle_Distal_R", "Armature/Skeleton3D:Middle_Intermediate_R", "Armature/Skeleton3D:Middle_Metacarpal_R", "Armature/Skeleton3D:Middle_Proximal_R", "Armature/Skeleton3D:Ring_Distal_R", "Armature/Skeleton3D:Ring_Intermediate_R", "Armature/Skeleton3D:Ring_Metacarpal_R", "Armature/Skeleton3D:Ring_Proximal_R", "Armature/Skeleton3D:Thumb_Distal_R", "Armature/Skeleton3D:Thumb_Metacarpal_R", "Armature/Skeleton3D:Thumb_Proximal_R", "Armature/Skeleton:Little_Distal_R", "Armature/Skeleton:Little_Intermediate_R", "Armature/Skeleton:Little_Proximal_R", "Armature/Skeleton:Middle_Distal_R", "Armature/Skeleton:Middle_Intermediate_R", "Armature/Skeleton:Middle_Proximal_R", "Armature/Skeleton:Ring_Distal_R", "Armature/Skeleton:Ring_Intermediate_R", "Armature/Skeleton:Ring_Proximal_R", "Armature/Skeleton:Thumb_Distal_R", "Armature/Skeleton:Thumb_Proximal_R"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0p3au"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8jnun"]
 animation = &"Grip 5"
 
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_rl0s8"]
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_h5f04"]
 filter_enabled = true
 filters = ["Armature/Skeleton3D:Index_Distal_R", "Armature/Skeleton3D:Index_Intermediate_R", "Armature/Skeleton3D:Index_Metacarpal_R", "Armature/Skeleton3D:Index_Proximal_R", "Armature/Skeleton:Index_Distal_R", "Armature/Skeleton:Index_Intermediate_R", "Armature/Skeleton:Index_Proximal_R"]
 
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_q2apf"]
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_elows"]
 graph_offset = Vector2(-552.664, 107.301)
-nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_5b1tu")
+nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_dmga3")
 nodes/ClosedHand1/position = Vector2(-600, 300)
-nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_ymvdn")
+nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_thnib")
 nodes/ClosedHand2/position = Vector2(-360, 300)
-nodes/Grip/node = SubResource("AnimationNodeBlend2_juk84")
+nodes/Grip/node = SubResource("AnimationNodeBlend2_h2753")
 nodes/Grip/position = Vector2(0, 40)
-nodes/OpenHand/node = SubResource("AnimationNodeAnimation_0p3au")
+nodes/OpenHand/node = SubResource("AnimationNodeAnimation_8jnun")
 nodes/OpenHand/position = Vector2(-600, 100)
-nodes/Trigger/node = SubResource("AnimationNodeBlend2_rl0s8")
+nodes/Trigger/node = SubResource("AnimationNodeBlend2_h5f04")
 nodes/Trigger/position = Vector2(-360, 40)
 node_connections = [&"Grip", 0, &"Trigger", &"Grip", 1, &"ClosedHand2", &"Trigger", 0, &"OpenHand", &"Trigger", 1, &"ClosedHand1", &"output", 0, &"Grip"]
 
@@ -73,15 +74,14 @@ ambient_light_source = 1
 reflected_light_source = 1
 
 [sub_resource type="QuadMesh" id="QuadMesh_vi1r3"]
-material = ExtResource("3_uwduq")
-size = Vector2(12, 12)
+size = Vector2(20, 20)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ap0s"]
 size = Vector3(12, 1, 12)
 
 [sub_resource type="QuadMesh" id="QuadMesh_l0e1e"]
 material = ExtResource("3_uwduq")
-size = Vector2(12, 4)
+size = Vector2(20, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w6gh2"]
 size = Vector3(12, 4, 1)
@@ -113,7 +113,7 @@ bones/22/rotation = Quaternion(0.0585786, 0.0216483, -0.269905, 0.96086)
 bones/23/rotation = Quaternion(0.00687177, -0.00357275, -0.211953, 0.977249)
 
 [node name="AnimationTree" parent="XROrigin3D/LeftHand/CollisionHandLeft/LeftHand" index="1"]
-tree_root = SubResource("AnimationNodeBlendTree_f5ea8")
+tree_root = SubResource("AnimationNodeBlendTree_vptri")
 
 [node name="Skeleton3D" parent="XROrigin3D/RightHand/CollisionHandRight/RightHand/Hand_Nails_low_R/Armature" index="0"]
 bones/1/rotation = Quaternion(0.323537, 2.56577e-05, 0.0272204, 0.945824)
@@ -137,7 +137,7 @@ bones/22/rotation = Quaternion(0.0585786, -0.0216483, 0.269905, 0.96086)
 bones/23/rotation = Quaternion(0.00687177, 0.00357275, 0.211953, 0.977249)
 
 [node name="AnimationTree" parent="XROrigin3D/RightHand/CollisionHandRight/RightHand" index="1"]
-tree_root = SubResource("AnimationNodeBlendTree_q2apf")
+tree_root = SubResource("AnimationNodeBlendTree_elows")
 
 [node name="World" type="Node3D" parent="." index="1"]
 
@@ -148,20 +148,23 @@ environment = SubResource("Environment_oplr7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0)
 omni_range = 12.0
 
-[node name="Ground" type="StaticBody3D" parent="World" index="2"]
+[node name="Floor" type="StaticBody3D" parent="World" index="2"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Ground" index="0"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Floor" index="0"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.47764, 0, 2.4248)
+material_override = ExtResource("2_xl0k8")
+cast_shadow = 0
 mesh = SubResource("QuadMesh_vi1r3")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Ground" index="1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Floor" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 shape = SubResource("BoxShape3D_3ap0s")
 
 [node name="Wall1" type="StaticBody3D" parent="World" index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2.13107)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="World/Wall1" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.05969, 0, 0)
 mesh = SubResource("QuadMesh_l0e1e")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Wall1" index="1"]
@@ -169,7 +172,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
 shape = SubResource("BoxShape3D_w6gh2")
 
 [node name="Wall2" type="StaticBody3D" parent="World" index="4"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5, 2, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.6626, 2, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="World/Wall2" index="0"]
 mesh = SubResource("QuadMesh_l0e1e")
@@ -179,7 +182,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
 shape = SubResource("BoxShape3D_w6gh2")
 
 [node name="Wall3" type="StaticBody3D" parent="World" index="5"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 2, 5)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3.39414, 2, 4.00019)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="World/Wall3" index="0"]
 mesh = SubResource("QuadMesh_l0e1e")
@@ -199,7 +202,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
 shape = SubResource("BoxShape3D_w6gh2")
 
 [node name="Ceiling" type="StaticBody3D" parent="World" index="7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.48212, 4, 2.11318)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="World/Ceiling" index="0"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
@@ -212,31 +215,63 @@ shape = SubResource("BoxShape3D_3ap0s")
 [node name="Machines" type="Node3D" parent="." index="2"]
 
 [node name="SlotMachineController0 - debug" parent="Machines" index="0" instance=ExtResource("6_osk6e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.389057, 0, -0.943801)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.43891, 0, -2.10764)
 url = "https://sklep.hard-pc.pl/"
 
 [node name="SlotMachineController1" parent="Machines" index="1" instance=ExtResource("6_osk6e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.86547, 0, -2.05838)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.14255, 0, -2.05838)
 url = "https://mobile2.gameassists.co.uk/htmlgames/game/nailedItGames?languagecode=pl&lobbyname=qfdemomal2mlt&productid=33184&logintype=VanguardSessionToken&ispracticeplay=true&gameid=riptidePiratesDesktop&clientid=50300&moduleid=101211&clienttypeid=70&username=demo&password=demo&casinoid=33184&gamename=riptidePiratesDesktop&host=Desktop&playmode=demo&theme=quickfiressl&isrgi=true&siteid=MAL2&regmarket=rmmt&brand=qfdemomal2mlt&gameprovidername=nailedItGames&gamepath=%2FnailedItGames%2FriptidePirates&gameversion=riptidePirates_NailedItGames_1_0_6_13&externalgame=False&gametitle=Riptide%20Pirates%E2%84%A2&displayname=Riptide%20Pirates%E2%84%A2"
 
 [node name="SlotMachineController2" parent="Machines" index="2" instance=ExtResource("6_osk6e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4979, 0, -2.05838)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.86484, 0, -2.05838)
 url = "https://staticdemo.yggdrasilgaming.com/init/launchClient.html?gameid=10122&lang=en&currency=EUR&org=Demo&key=&fullscreen=yes"
 
 [node name="SlotMachineController3" parent="Machines" index="3" instance=ExtResource("6_osk6e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3679, 0, -2.05838)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5773, 0, -2.05838)
 url = "https://pastew.com/slot_proxy/?gameid=5483&token=fzU4LLvZSYsS1z7UrikKgsLstLUFWmaJ14cb6crtpcA6rohPKo"
 
 [node name="SlotMachineController4" parent="Machines" index="4" instance=ExtResource("6_osk6e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.120972, 0, -2.05838)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.955451, 0, -2.05838)
 url = "https://d2drhksbtcqozo.cloudfront.net/casino/relax/moneytrain/?moneymode=fun"
 
 [node name="SlotMachineController5" parent="Machines" index="5" instance=ExtResource("6_osk6e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00805, 0, -2.05838)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.18498, 0, -2.05838)
 url = "https://pastew.com/slot_proxy/?gameid=4423&token=fzU4LLvZSYsS1z7UrikKgsLstLUFWmaJ14cb6crtpcA6rohPKo"
 
 [node name="SlotMachineController6" parent="Machines" index="6" instance=ExtResource("6_osk6e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08646, 0, -2.05838)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.39024, 0, -2.05838)
+url = "https://pastew.com/slot_proxy/?gameid=19513&token=fzU4LLvZSYsS1z7UrikKgsLstLUFWmaJ14cb6crtpcA6rohPKo"
+
+[node name="SlotMachineController7" parent="Machines" index="7" instance=ExtResource("6_osk6e")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.45788, 0, 3.65221)
+url = "https://mobile2.gameassists.co.uk/htmlgames/game/nailedItGames?languagecode=pl&lobbyname=qfdemomal2mlt&productid=33184&logintype=VanguardSessionToken&ispracticeplay=true&gameid=riptidePiratesDesktop&clientid=50300&moduleid=101211&clienttypeid=70&username=demo&password=demo&casinoid=33184&gamename=riptidePiratesDesktop&host=Desktop&playmode=demo&theme=quickfiressl&isrgi=true&siteid=MAL2&regmarket=rmmt&brand=qfdemomal2mlt&gameprovidername=nailedItGames&gamepath=%2FnailedItGames%2FriptidePirates&gameversion=riptidePirates_NailedItGames_1_0_6_13&externalgame=False&gametitle=Riptide%20Pirates%E2%84%A2&displayname=Riptide%20Pirates%E2%84%A2"
+
+[node name="SlotMachineController8" parent="Machines" index="8" instance=ExtResource("6_osk6e")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.18017, 0, 3.65221)
+url = "https://staticdemo.yggdrasilgaming.com/init/launchClient.html?gameid=10122&lang=en&currency=EUR&org=Demo&key=&fullscreen=yes"
+
+[node name="SlotMachineController9" parent="Machines" index="9" instance=ExtResource("6_osk6e")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.892626, 0, 3.65221)
+url = "https://pastew.com/slot_proxy/?gameid=5483&token=fzU4LLvZSYsS1z7UrikKgsLstLUFWmaJ14cb6crtpcA6rohPKo"
+
+[node name="SlotMachineController10" parent="Machines" index="10" instance=ExtResource("6_osk6e")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.64013, 0, 3.65221)
+url = "https://d2drhksbtcqozo.cloudfront.net/casino/relax/moneytrain/?moneymode=fun"
+
+[node name="SlotMachineController11" parent="Machines" index="11" instance=ExtResource("6_osk6e")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.86965, 0, 3.65221)
+url = "https://pastew.com/slot_proxy/?gameid=4423&token=fzU4LLvZSYsS1z7UrikKgsLstLUFWmaJ14cb6crtpcA6rohPKo"
+
+[node name="SlotMachineController12" parent="Machines" index="12" instance=ExtResource("6_osk6e")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.07491, 0, 3.65221)
+url = "https://pastew.com/slot_proxy/?gameid=19513&token=fzU4LLvZSYsS1z7UrikKgsLstLUFWmaJ14cb6crtpcA6rohPKo"
+
+[node name="SlotMachineController13" parent="Machines" index="13" instance=ExtResource("6_osk6e")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 10.4979, 0, 0.310346)
+url = "https://pastew.com/slot_proxy/?gameid=4423&token=fzU4LLvZSYsS1z7UrikKgsLstLUFWmaJ14cb6crtpcA6rohPKo"
+
+[node name="SlotMachineController14" parent="Machines" index="14" instance=ExtResource("6_osk6e")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 10.4979, 0, 1.51561)
 url = "https://pastew.com/slot_proxy/?gameid=19513&token=fzU4LLvZSYsS1z7UrikKgsLstLUFWmaJ14cb6crtpcA6rohPKo"
 
 [node name="WebBrowser" parent="." index="3" instance=ExtResource("7_7plsn")]
